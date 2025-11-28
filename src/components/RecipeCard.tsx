@@ -2,7 +2,7 @@ import { Recipe } from '../types';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
-import { Clock, Plus, Users } from 'lucide-react';
+import { Clock, Plus, Users, Flame, DollarSign } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { toast } from 'sonner';
 
@@ -75,6 +75,14 @@ export function RecipeCard({ recipe, onAddToWeek }: RecipeCardProps) {
           <div className="flex items-center gap-1">
             <Users size={14} className="text-primary" />
             <span>{recipe.servings} porções</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <Flame size={14} className="text-orange-500" />
+            <span>{recipe.calories} kcal</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <DollarSign size={14} className="text-green-600" />
+            <span>R$ {recipe.price.toFixed(2)}</span>
           </div>
         </div>
         

@@ -8,6 +8,8 @@ export interface Recipe {
   tags: string[];
   ingredients: string[];
   servings: number;
+  calories: number; // Calorias por porção
+  price: number; // Preço estimado por porção em R$
 }
 
 export interface PlannedMeal {

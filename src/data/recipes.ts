@@ -10,7 +10,9 @@ export const mockRecipes: Recipe[] = [
     difficulty: 'Fácil',
     tags: ['vegetariano', 'rápido'],
     ingredients: ['massa', 'pimentões', 'abobrinha', 'creme de leite', 'alho', 'parmesão'],
-    servings: 4
+    servings: 4,
+    calories: 420,
+    price: 18.50
   },
   {
     id: '2',
@@ -21,7 +23,9 @@ export const mockRecipes: Recipe[] = [
     difficulty: 'Fácil',
     tags: ['vegetariano', 'sem glúten', 'rápido'],
     ingredients: ['folhas verdes', 'tomates', 'azeitonas', 'queijo feta', 'azeite', 'limão'],
-    servings: 2
+    servings: 2,
+    calories: 280,
+    price: 12.90
   },
   {
     id: '3',
@@ -32,7 +36,9 @@ export const mockRecipes: Recipe[] = [
     difficulty: 'Médio',
     tags: ['sem glúten', 'sem lactose'],
     ingredients: ['peito de frango', 'ervas', 'azeite', 'alho', 'limão', 'pimenta do reino'],
-    servings: 4
+    servings: 4,
+    calories: 320,
+    price: 22.00
   },
   {
     id: '4',
@@ -43,7 +49,9 @@ export const mockRecipes: Recipe[] = [
     difficulty: 'Fácil',
     tags: ['vegetariano', 'sem glúten', 'sem lactose'],
     ingredients: ['cenouras', 'aipo', 'cebolas', 'caldo de legumes', 'batatas', 'ervas'],
-    servings: 6
+    servings: 6,
+    calories: 180,
+    price: 8.50
   },
   {
     id: '5',
@@ -54,7 +62,9 @@ export const mockRecipes: Recipe[] = [
     difficulty: 'Fácil',
     tags: ['vegetariano', 'sem lactose', 'rápido'],
     ingredients: ['brócolis', 'pimentões', 'ervilhas tortas', 'molho shoyu', 'gengibre', 'alho'],
-    servings: 3
+    servings: 3,
+    calories: 150,
+    price: 11.80
   },
   {
     id: '6',
@@ -65,7 +75,9 @@ export const mockRecipes: Recipe[] = [
     difficulty: 'Médio',
     tags: ['sem glúten', 'sem lactose', 'rápido'], // Tag 'rápido' adicionada
     ingredients: ['filé de salmão', 'mel', 'molho shoyu', 'gengibre', 'alho', 'limão'],
-    servings: 2
+    servings: 2,
+    calories: 450,
+    price: 35.00
   },
   {
     id: '7',
@@ -76,7 +88,9 @@ export const mockRecipes: Recipe[] = [
     difficulty: 'Fácil',
     tags: ['vegetariano', 'sem glúten'],
     ingredients: ['polvilho azedo', 'polvilho doce', 'queijo minas', 'ovos', 'leite', 'óleo'],
-    servings: 12
+    servings: 12,
+    calories: 85,
+    price: 2.50
   },
   {
     id: '8',
@@ -87,7 +101,9 @@ export const mockRecipes: Recipe[] = [
     difficulty: 'Médio',
     tags: ['sem glúten', 'sem lactose'],
     ingredients: ['feijão preto', 'carne seca', 'costelinha de porco', 'paio', 'bacon', 'cebola', 'alho', 'laranja', 'couve'],
-    servings: 8
+    servings: 8,
+    calories: 520,
+    price: 28.00
   },
   {
     id: '10',
@@ -98,7 +114,9 @@ export const mockRecipes: Recipe[] = [
     difficulty: 'Fácil',
     tags: ['vegetariano', 'sem glúten', 'rápido', 'sobremesa'], // Tag 'Sobremesa' adicionada
     ingredients: ['leite condensado', 'chocolate em pó', 'manteiga', 'chocolate granulado'],
-    servings: 20
+    servings: 20,
+    calories: 120,
+    price: 1.80
   },
   // --- Novas Receitas Adicionadas ---
   {
@@ -110,7 +128,9 @@ export const mockRecipes: Recipe[] = [
     difficulty: 'Fácil',
     tags: ['sem glúten', 'rápido'],
     ingredients: ['peito de frango', 'creme de leite', 'ketchup', 'mostarda', 'champignon', 'cebola', 'alho', 'batata palha'],
-    servings: 4
+    servings: 4,
+    calories: 380,
+    price: 24.00
   },
   {
     id: '12',
@@ -121,7 +141,9 @@ export const mockRecipes: Recipe[] = [
     difficulty: 'Fácil',
     tags: ['sem lactose'],
     ingredients: ['espaguete', 'carne moída', 'tomate pelado', 'cebola', 'alho', 'cenoura', 'manjericão'],
-    servings: 4
+    servings: 4,
+    calories: 450,
+    price: 19.50
   },
   {
     id: '13',
@@ -132,6 +154,8 @@ export const mockRecipes: Recipe[] = [
     difficulty: 'Fácil',
     tags: ['sem glúten', 'rápido'],
     ingredients: ['goma de tapioca', 'frango desfiado', 'queijo mussarela', 'requeijão (opcional)', 'tomate'],
-    servings: 1
+    servings: 1,
+    calories: 320,
+    price: 8.00
   }
 ];

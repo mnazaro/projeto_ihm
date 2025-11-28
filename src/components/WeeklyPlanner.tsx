@@ -13,7 +13,9 @@ import {
   UtensilsCrossed,
   Sun,
   Sunrise,
-  Moon as MoonIcon
+  Moon as MoonIcon,
+  Flame,
+  DollarSign
 } from 'lucide-react';
 import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
@@ -155,6 +157,14 @@ function DraggableMeal({ meal, onRemove, onChangeDay, onChangeMealType }: Dragga
               <span className="font-medium">{meal.recipe.servings}p</span>
             </div>
             <div className="flex items-center gap-1.5">
+              <Flame size={14} className="text-orange-500" />
+              <span className="font-medium">{meal.recipe.calories} kcal</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <DollarSign size={14} className="text-green-600" />
+              <span className="font-medium">R$ {meal.recipe.price.toFixed(2)}</span>
+            </div>
+            <div className="flex items-center gap-1.5">
               <UtensilsCrossed size={14} className="text-primary" />
               <span className="font-medium">{meal.recipe.difficulty}</span>
             </div>
@@ -274,6 +284,12 @@ function DropZone({ day, meals, onDrop, onRemove, onChangeDay, onChangeMealType 
     return acc;
   }, {} as Record<string, PlannedMeal[]>);
 
+  // Calculate total calories for the day
+  const totalCalories = meals.reduce((total, meal) => total + meal.recipe.calories, 0);
+
+  // Calculate total price for the day
+  const totalPrice = meals.reduce((total, meal) => total + meal.recipe.price, 0);
+
   return (
     <Card className={`flex flex-col h-full min-h-[400px] transition-all duration-300 ${
       isOver 
@@ -285,14 +301,32 @@ function DropZone({ day, meals, onDrop, onRemove, onChangeDay, onChangeMealType 
           <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
             {day}
           </span>
-          {meals.length > 0 && (
-            <Badge 
-              variant="default" 
-              className="text-xs font-semibold shadow-sm animate-pulse"
-            >
-              {meals.length} {meals.length === 1 ? 'refeição' : 'refeições'}
-            </Badge>
-          )}
+          <div className="flex items-center gap-2">
+            {meals.length > 0 && (
+              <>
+                <Badge 
+                  variant="default" 
+                  className="text-xs font-semibold shadow-sm animate-pulse"
+                >
+                  {meals.length} {meals.length === 1 ? 'refeição' : 'refeições'}
+                </Badge>
+                <Badge 
+                  variant="secondary" 
+                  className="text-xs font-semibold shadow-sm bg-orange-100 text-orange-700 dark:bg-orange-900 dark:text-orange-300"
+                >
+                  <Flame size={10} className="mr-1" />
+                  {totalCalories} kcal
+                </Badge>
+                <Badge 
+                  variant="secondary" 
+                  className="text-xs font-semibold shadow-sm bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300"
+                >
+                  <DollarSign size={10} className="mr-1" />
+                  R$ {totalPrice.toFixed(2)}
+                </Badge>
+              </>
+            )}
+          </div>
         </CardTitle>
       </CardHeader>
       <CardContent className="flex-1 p-0">
